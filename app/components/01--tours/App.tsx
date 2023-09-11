@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Tours from "./Tours";
 import { Box, Grid } from "@mui/material";
-import { useRouter } from "next/navigation";
+import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
 
 async function fetchData(): Promise<DataToursType[]> {
   const res = await fetch("https://course-api.com/react-tours-project");
@@ -11,8 +11,6 @@ async function fetchData(): Promise<DataToursType[]> {
 export default function ToursApp() {
   const [tours, setTours] = useState<DataToursType[]>([]);
   const [loading, setLoading] = useState(false);
-
-  const router = useRouter();
 
   async function fetchTours() {
     setLoading(true);
@@ -40,12 +38,12 @@ export default function ToursApp() {
     <>
       {tours.length === 0 && (
         <main className="text-center">
-          <p className="text-blue-500 text-lg">Their is no tours left!</p>
+          <p className="text-white text-lg">Their is no tours left!</p>
           <button
-            className="bg-blue-700 text-white py-[2] px-[2rem] rounded-md"
+            className="bg-blue-500 text-white py-[.5rem] px-[2rem] rounded-md"
             onClick={fetchTours}
           >
-            refresh
+            Refresh <RefreshRoundedIcon/>
           </button>
         </main>
       )}

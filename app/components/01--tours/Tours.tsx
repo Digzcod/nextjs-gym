@@ -1,12 +1,10 @@
+import React, { useState } from "react";
 import {
-  Card,
-  Grid,
   Paper,
   Typography,
   CardMedia,
   Button,
 } from "@mui/material";
-import React, { useState } from "react";
 
 interface ToursProps {
   name: string;
@@ -56,7 +54,7 @@ export default function Tours({
         />
       </div>
       <div className="m-[1.3rem] pb-[1rem]">
-        <Typography variant="h6" color="initial">
+        <Typography variant="h6" color="initial " className="mb-[.5rem]">
           {name}
         </Typography>
 
@@ -64,7 +62,7 @@ export default function Tours({
           {showMore ? info : `${info.substring(0, 200)}`}
           <span className="text-gray-500 text-2xl">....</span>
           <button
-            className="font-semibold text-green-600"
+            className="font-semibold text-green-600 "
             onClick={() => setShowMore(!showMore)}
           >
             {showMore ? "Show Less" : "Read More"}
@@ -75,7 +73,7 @@ export default function Tours({
           <Button
             fullWidth
             variant="outlined"
-            className="border-green-500 text-green-500"
+            className="border-green-500 text-green-500 hover:border-green-500 hover:bg-white"
             onClick={() => removeTours(id)}
           >
             Not Interested
