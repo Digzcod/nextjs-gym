@@ -1,9 +1,15 @@
-import React from "react";
 
-export default function TabsContent() {
+import React, { ReactNode } from "react";
+
+interface ContentProps {
+  children: ReactNode
+}
+
+export default function TabsContent({children}: ContentProps) {
   return (
-    <div>
+    <main className="h-screen w-screen">
       <h1>TabsContent</h1>
-    </div>
+      {children}
+    </main>
   );
 }
