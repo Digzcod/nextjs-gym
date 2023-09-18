@@ -2,7 +2,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Stephen Projects | 02-Tabs',
+  title: 'Digz | 02-Tabs',
   description: 'Choose your favorite tours',
 }
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 
 
-export default function Tabs({
+export default function TabsLayout({
     children,
   }: {
     children: React.ReactNode

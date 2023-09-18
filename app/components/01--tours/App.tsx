@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Tours from "./Tours";
 import { Box, Grid } from "@mui/material";
-import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
+import RefreshRoundedIcon from "@mui/icons-material/RefreshRounded";
 
 async function fetchData(): Promise<DataToursType[]> {
   const res = await fetch("https://course-api.com/react-tours-project");
@@ -28,6 +28,8 @@ export default function ToursApp() {
     fetchTours();
   }, []);
 
+ 
+
   const handleDelete = (id: string) => {
     // Filter out the item with the specified ID
     const updatedTours = tours.filter((item) => item.id !== id);
@@ -36,18 +38,6 @@ export default function ToursApp() {
 
   return (
     <>
-      {tours.length === 0 && (
-        <main className="text-center">
-          <p className="text-white text-lg">Their is no tours left!</p>
-          <button
-            className="bg-blue-500 text-white py-[.5rem] px-[2rem] rounded-md"
-            onClick={fetchTours}
-          >
-            Refresh <RefreshRoundedIcon/>
-          </button>
-        </main>
-      )}
-
       <Box className="mx-[auto] px-[auto] max-w-lg">
         <Grid
           container
@@ -68,18 +58,27 @@ export default function ToursApp() {
             },
           }}
         >
-          {loading ? (
-            <p>Loading...</p>
-          ) : (
-            <>
-              {tours.map((item) => (
-                <Grid item xs={8} className="w-[auto]" key={item.id}>
-                  <Tours removeTours={handleDelete} {...item} />
-                </Grid>
-              ))}
-            </>
-          )}
+          {tours.map((item) => (
+            <Grid item xs={8} className="w-[auto]" key={item.id}>
+              <Tours removeTours={handleDelete} {...item} />
+            </Grid>
+          ))}
         </Grid>
+        {!loading ? (
+          <>
+            {tours.length === 0  && (
+              <main className="text-center">
+                <p className="text-white text-lg">Their is no tours left!</p>
+                <button
+                  className="bg-blue-500 text-white py-[.5rem] px-[2rem] rounded-md"
+                  onClick={fetchTours}
+                >
+                 Refresh <RefreshRoundedIcon />
+                </button>
+              </main>
+            )}
+          </>
+        ): <h2 className="text-center text-blue-400 mt-[10rem]">Loading...</h2>}
       </Box>
     </>
   );

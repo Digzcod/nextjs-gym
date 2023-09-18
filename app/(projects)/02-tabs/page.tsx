@@ -14,10 +14,11 @@ import TabsContent from './TabsContent'
 
 
 export default function TabsPage() {
+ const [tabs, setTabs] = useState<string>("digz")
 
- const [tabs, setTabs] = useState<string>("tommy")
-
- const handleTabsName = (tabsName: string) => setTabs(tabsName)
+ const handleTabsName = (tabsName: string) =>{
+  setTabs(tabsName)
+ }
  
 
   return (

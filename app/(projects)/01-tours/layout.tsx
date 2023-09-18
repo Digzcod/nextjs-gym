@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-  title: 'Stephen Tabs Projects | 02-Tabs',
+  title: 'Digz | 01-Tours',
   description: 'Choose your favorite tours',
 }
 
