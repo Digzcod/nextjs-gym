@@ -1,0 +1,9 @@
+.activeTab {
+  outline: none; /* Remove outline */
+  color: #11cf70ef;
+}
+.active-tab:focus {
+  outline: none; /* Remove outline when focused */
+}
+/* background-color: #00FF00; Green background color when active */
+/* border-left: 4px solid #14f38b; Green left border when active */
