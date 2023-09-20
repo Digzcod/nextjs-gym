@@ -8,7 +8,7 @@ interface Props {
 export default function ContentLayout({children}: Props) {
   return (
     <main className='grid justify-start my-auto pl-[4rem] mx-auto'>
-        <Paper elevation={2} className='mt-[9rem] min-h-min min-w-[auto] px-[2rem] py-3'>
+        <Paper elevation={2} className='mt-[9rem] min-h-min min-w-min px-[2rem] py-3'>
         {children}
         </Paper>
     </main>
