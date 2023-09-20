@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "./TabsBtn.module.css";
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
+import { Card, Paper } from "@mui/material";
 
 interface TabsBtnProps {
   activeTabs: string;
@@ -9,9 +10,10 @@ interface TabsBtnProps {
 
 export default function TabsBtn({ nameTabs, activeTabs }: TabsBtnProps) {
   return (
+     
     <aside className="w-[20rem] min-h-screen ml-[3rem] h-screen px-1">
-  
-      <div className=" grid mt-60 transition delay-75 pl-4 ">
+
+      <div className=" grid mt-60 transition delay-75 justify-end">
         <div className="flex Just min-w-[3rem] items-center">
           <button
             className={`text-lg justify-start w-[rem] py-2 font-semibold text-gray-600 pl-2
