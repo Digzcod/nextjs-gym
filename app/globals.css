@@ -4,10 +4,11 @@
 
 
 html {
-  font-size: 77.5%;
+  font-size: 78.5%;
   letter-spacing: 1.7px;
 }
 
 body {
   background-color: "#fefe";
+  line-height: 150%;
 }
