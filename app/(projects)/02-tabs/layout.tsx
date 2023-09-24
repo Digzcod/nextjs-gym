@@ -6,11 +6,6 @@ export const metadata: Metadata = {
   description: 'Choose your favorite tours',
 }
 
-
-
-
-
-
 export default function TabsLayout({
     children,
   }: {
@@ -18,6 +13,6 @@ export default function TabsLayout({
   }) {
     return (
     
-        <body>{children}</body>
+        <section>{children}</section>
     )
   }

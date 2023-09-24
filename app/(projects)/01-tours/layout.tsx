@@ -14,6 +14,6 @@ export default function ToursLayout({
 }) {
   return (
   
-      <body>{children}</body>
+      <section>{children}</section>
   )
 }
