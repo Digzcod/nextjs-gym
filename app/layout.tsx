@@ -1,9 +1,9 @@
-// 'use client'
 
 import './globals.css'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import Navbar from './components/00--landingPage/Navbar'
+
 
 const fontStyle = Montserrat({ subsets: ['latin'] })
 
@@ -21,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={fontStyle.className}>
         <Navbar/>
+     
         {children}
       </body>
     </html>
