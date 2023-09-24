@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="navbar bg-white shadow-sm h-[5rem font-medium flex justify-center space-x-3 py-4">
+      <nav className="navbar bg-white shadow h-[5rem font-medium flex justify-center space-x-3 py-4">
         <div className="flex items-baseline">
         <AiTwotoneHome className="text-gray-500  text-2xl font-semibold mr-[-.5rem]"/> 
           <button className="mx-3 text-lg font-medium my-1">
