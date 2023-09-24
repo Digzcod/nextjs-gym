@@ -1,14 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import { AiTwotoneHome,  } from "react-icons/ai";
-import { BsFillLayersFill, BsBookmarkStarFill } from "react-icons/bs";
+import { BsFillLayersFill } from "react-icons/bs";
+import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+
 
 
 
 export default function Navbar() {
-  // const [itemOne, setItemOne] = useState(false);
+  // const [lightMode, setLightMode] = useState(false);
 
   return (
     <>
@@ -30,6 +32,9 @@ export default function Navbar() {
             Achievements
           </button>
         </div>
+        <button>
+          {/* {light ?<LightModeRoundedIcon/> :  <DarkModeIcon/>} */}
+        </button>
       </nav>
     </>
   );
