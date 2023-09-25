@@ -57,8 +57,8 @@ export default function Navbar() {
 
           <label className="swap swap-indeterminate">
             <input type="checkbox" onChange={handleTheme} />
-            <LightModeRoundedIcon className="swap-on" />
-            <DarkModeIcon className="swap-off" />
+            <LightModeRoundedIcon className="swap-on text-green-400 text-3xl" />
+            <DarkModeIcon className="swap-off text-green-400 text-3xl" />
           </label>
         </div>
       </nav>
