@@ -9,7 +9,7 @@ export default function LandingPage() {
         <Image
           alt="Web developer Digz"
           src={FrontendPic}
-          className="w-full h-full object-cover md"
+          className="w-full h-full object-cover md rounded-lg"
           placeholder="blur"
         />
       </div>

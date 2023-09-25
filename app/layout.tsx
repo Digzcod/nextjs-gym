@@ -23,9 +23,7 @@ export default function RootLayout({
   return (
 
     <html lang="en">
-      <body className={fontStyle.className} >
-        <Navbar/>
-     
+      <body className={fontStyle.className} >     
         {children}
       </body>
     </html>
