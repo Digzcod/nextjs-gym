@@ -1,4 +1,5 @@
 'use client'
+import Navbar from '@/app/components/00--landingPage/Navbar'
 import ToursApp from '@/app/components/01--tours/App'
 
 
