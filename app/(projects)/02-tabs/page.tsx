@@ -14,7 +14,7 @@ export default function TabsPage() {
  }
 
   return (
-    <main className='flex flex-row bg-gray-100'>
+    <main className='flex flex-row'>
       <TabsBtn activeTabs={tabs} nameTabs={handleTabsName}/>
       <TabsContent>
         {tabs === 'digz' && <Digz/>}

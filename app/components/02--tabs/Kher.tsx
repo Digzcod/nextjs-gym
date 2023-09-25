@@ -8,8 +8,8 @@ export default function Kher() {
        <section>
         <p className="text-green-400 text-3xl font-medium">Kher Jabagat</p>
         <div className="flex items-center my-[.4rem]">
-          <p className="btn btn-xs">Position</p>
-          <p className="ml-2 font-semibold btn btn-xs">Graphics Animator</p>
+          <p className="btn btn-xs bg-white">Position</p>
+          <p className="ml-2 font-semibold btn btn-xs bg-white">Graphics Animator</p>
         </div>
         <div className="grid my-2">
           <p className="font-bold border-b-4 text-lg">Summary:</p>
