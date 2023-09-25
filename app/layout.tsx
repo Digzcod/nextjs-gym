@@ -1,9 +1,7 @@
-'use client'
+
 import './globals.css'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
-import Navbar from './components/00--landingPage/Navbar'
-import { useEffect, useState } from 'react'
 
 
 const fontStyle = Montserrat({ subsets: ['latin'] })

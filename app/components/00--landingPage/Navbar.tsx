@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import React, { useEffect, useState } from "react";
 import { AiTwotoneHome } from "react-icons/ai";
 import { BsFillLayersFill } from "react-icons/bs";
@@ -16,7 +16,10 @@ const themes: ThemesProps = {
 }
 
 function getLocalStorage() {
-  return localStorage.getItem('theme') || themes.corporate
+  if(typeof window !== 'undefined') {
+    return localStorage.getItem('theme') || themes.corporate
+  }
+  return themes.corporate
 }
 
 export default function Navbar() {
