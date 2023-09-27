@@ -21,7 +21,7 @@ export default function Carousel() {
         <div className='carousel-item w-[50px] h-[50px] sm:w-[60px] sm:h-[60px]'>
             <Image src={tsLogo} alt='js' className='w-full h-full' placeholder='empty'/>
         </div>
-        <div className='carousel-item w-[55px] h-[50px] sm:w-[70px] sm:h-[70px]'>
+        <div className='carousel-item w-[60px] h-[50px] sm:w-[70px] sm:h-[60px]'>
             <Image src={reactLogo} alt='js' className='w-full h-full' placeholder='empty'/>
         </div>
         <div className='carousel-item w-[50px] h-[50px] sm:w-[70px] sm:h-[70px]'>
