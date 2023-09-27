@@ -9,13 +9,6 @@ import muiLogo from "../public/mui.png"
 import tailwindLogo from "../public/tailwindcss-ar21.png"
 import Slider from "react-slick";
 
-// interface Setting {
-//         dots: boolean;
-//         infinite: boolean;
-//         speed: number;
-//         slidesToShow: number;
-//         slidesToScroll: number;
-//     }
 
 export default function Carousel() {
 
