@@ -27,7 +27,7 @@ export default function Navbar() {
 
   function handleTheme() {
     const {corporate, dark} = themes
-    const newTheme =theme === corporate ? dark : corporate
+    const newTheme = theme === corporate ? dark : corporate
     setTheme(newTheme)
   }
   
