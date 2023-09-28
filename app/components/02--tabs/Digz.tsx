@@ -9,8 +9,8 @@ export default function Digz() {
       <section>
         <p className="text-green-400 text-3xl font-medium">Digz Jaramillo</p>
         <div className="flex items-center my-[.4rem]">
-          <p className="btn btn-xs bg-white">Position</p>
-          <p className="btn btn-xs ml-2 font-semibold bg-white">Web Developer</p>
+          <p className="btn btn-xs">Position</p>
+          <p className="btn btn-xs ml-2 font-semibold">Web Developer</p>
         </div>
         <div className="grid my-2">
           <p className="font-bold border-b-4 text-lg">Summary:</p>

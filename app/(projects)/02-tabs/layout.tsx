@@ -13,7 +13,6 @@ export default function TabsLayout({
 }) {
   return (
     <section>
-      <Navbar />
       {children}
     </section>
   );

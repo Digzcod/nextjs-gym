@@ -7,8 +7,8 @@ export default function Clint() {
        <section>
         <p className="text-green-400 text-3xl font-medium">Clint Jabagat</p>
         <div className="flex items-center my-1">
-          <p className="btn btn-xs bg-white">Position</p>
-          <p className=" btn btn-xs ml-2 font-semibold bg-white">General Manager</p>
+          <p className="btn btn-xs ">Position</p>
+          <p className=" btn btn-xs ml-2 font-semibold">General Manager</p>
         </div>
         <div className="grid my-2">
           <p className="font-bold border-b-4 text-lg">Summary:</p>

@@ -13,7 +13,6 @@ export default function ToursLayout({
 }) {
   return (
     <section>
-      <Navbar />
       {children}
     </section>
   );

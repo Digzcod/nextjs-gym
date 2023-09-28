@@ -13,7 +13,7 @@ interface ThemesProps {
 
 const themes: ThemesProps = {
   corporate: 'corporate',
-  dark: 'dark'
+  dark: 'dracula'
 }
 
 function getLocalStorage() {
