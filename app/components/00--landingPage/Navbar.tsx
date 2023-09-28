@@ -70,7 +70,7 @@ export default function Navbar() {
           </Link>
 
           <Link href={'/achievements'}>
-        <div className={`flex items-baseline ${active === 'achievements' ? 'text-green-500 px-3 py-2' : ''}`}>
+        <div className={`flex items-baseline ${active === 'achievements' ? 'text-green-500' : ''}`}>
           <button onClick={() => handleClickMenu('achievements')} className="mx-3 text-lg font-medium my-1">
             Achievements
           </button>
