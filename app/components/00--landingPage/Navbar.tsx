@@ -25,22 +25,20 @@ function getLocalStorage() {
 
 export default function Navbar() {
   const [theme, setTheme] = useState(getLocalStorage());
-  const [active, setActive] = useState('home')
+  const [active, setActive] = useState('')
 
   function handleTheme() {
     const {corporate, dark} = themes
     const newTheme = theme === corporate ? dark : corporate
     setTheme(newTheme)
   }
-
-  function handleClickMenu(tabs: string) {
-    setActive(tabs)
-  }
   
   useEffect(function(){
     document.documentElement.setAttribute('data-theme', theme)
     localStorage.setItem('theme', theme)
   },[theme])
+
+
 
   return (
     <>
@@ -49,7 +47,7 @@ export default function Navbar() {
         <div className={`flex items-baseline ${active === 'home' ? 'text-green-500' : ''}`}>
           <AiTwotoneHome className='text-2xl font-semibold mr-[-.5rem]'/>
           <button 
-          onClick={() => handleClickMenu('home')} 
+          onClick={() => setActive('home')} 
           className="mx-3 text-lg font-medium my-1"
           >
             Home
@@ -62,7 +60,7 @@ export default function Navbar() {
           <BsFillLayersFill className=" text-2xl font-semibold mr-[-.5rem]" />
           <button 
           className="mx-3 text-lg font-medium my-1"
-          onClick={() => handleClickMenu('portfolio')}
+          onClick={() => setActive('portfolio')}
           >
             Projects
           </button>
@@ -71,7 +69,7 @@ export default function Navbar() {
 
           <Link href={'/achievements'}>
         <div className={`flex items-baseline ${active === 'achievements' ? 'text-green-500' : ''}`}>
-          <button onClick={() => handleClickMenu('achievements')} className="mx-3 text-lg font-medium my-1">
+          <button onClick={() => setActive('achievements')} className="mx-3 text-lg font-medium my-1">
             Achievements
           </button>
         </div>
