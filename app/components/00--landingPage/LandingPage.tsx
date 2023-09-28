@@ -4,8 +4,8 @@ import FrontendPic from "../../../public/undraw_Developer.png";
 
 export default function LandingPage() {
   return (
-    <section className="min-h-min min-w-min  md:flex md:justify-center items-center ">
-      <div className="w-[28rem] h-[28rem] overflow-hidden m-[3rem] sm:w-[35rem] sm:h-[35rem]">
+    <section className="min-h-min min-w-min  md:flex md:justify-center items-center  mx-auto">
+      <div className="w-[25rem] h-[25rem] overflow-hidden m-[3rem] sm:w-[32.5rem] sm:h-[32.5rem]">
         <Image
           alt="Web developer Digz"
           src={FrontendPic}
