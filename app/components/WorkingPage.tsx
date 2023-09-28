@@ -6,13 +6,16 @@ import Link from "next/link";
 export default function WorkingPage() {
   return (
     <section className="grid justify-center px-[2rem]">
-      <div className="w-[30rem] h-[30rem] sm:w-[50rem] sm:h-[auto]">
+      <div className="w-[28.5rem] h-[28.5rem] sm:w-[40rem] sm:h-[auto]">
         <Image src={workingPic} alt="working" className="w-full h-full" />
-        <div className="relative">
-          <p className=" text-xl sm:text-4xl text-green-500 font-medium">
-            I&apos;ve working on this section to make you better!
+        <div className="grid">
+          <p className=" text-xl sm:text-4xl text-green-500 font-medium block">
+            I&apos;ve been working on this section to make it better! 
           </p>
-          <div className="mt-5">
+          <p className=" text-sm sm:text-xl mt-3">
+            It will available soon... 
+          </p>
+          <div className="mt-5 ml-[auto]">
             <Link href={"/"}>
               <p className="btn">Go Back to Main</p>
             </Link>
