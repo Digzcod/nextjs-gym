@@ -12,7 +12,7 @@ export default function PageNotFound() {
         </div>
         <div className='mt-10 w-full flex justify-center'>
             <Link href={'/'}>
-        <p className='btn btn-success'>
+        <p className='btn'>
             Back to Home Page
         </p>
             </Link>
