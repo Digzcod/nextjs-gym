@@ -23,6 +23,7 @@ function getLocalStorage() {
   return themes.corporate
 }
 
+
 export default function Navbar() {
   const [theme, setTheme] = useState(getLocalStorage());
   const [active, setActive] = useState('')
@@ -76,12 +77,12 @@ export default function Navbar() {
           </Link>
 
         <div className="navbar-end">
-          {/* {light ?<LightModeRoundedIcon/> :  <DarkModeIcon/>} */}
           <label className="swap swap-indeterminate">
             <input type="checkbox" onChange={handleTheme} />
             <LightModeRoundedIcon className="swap-on text-green-400 text-3xl" />
             <DarkModeIcon className="swap-off text-green-400 text-3xl" />
           </label>
+         
         </div>
 
       </nav>
