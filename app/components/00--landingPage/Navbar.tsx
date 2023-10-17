@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback, memo } from "react";
 import { AiTwotoneHome } from "react-icons/ai";
 import { BsFillLayersFill } from "react-icons/bs";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
@@ -24,15 +24,15 @@ function getLocalStorage() {
 }
 
 
-export default function Navbar() {
+export default memo( function Navbar() {
   const [theme, setTheme] = useState(getLocalStorage());
   const [active, setActive] = useState('')
 
-  function handleTheme() {
+  const handleTheme = useCallback(function handleTheme() {
     const {corporate, dark} = themes
     const newTheme = theme === corporate ? dark : corporate
     setTheme(newTheme)
-  }
+  }, [theme])
   
   useEffect(function(){
     document.documentElement.setAttribute('data-theme', theme)
@@ -89,4 +89,4 @@ export default function Navbar() {
       </nav>
     </>
   );
-}
+})
