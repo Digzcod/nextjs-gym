@@ -1,13 +1,12 @@
 
 import React from 'react'
 import Image from 'next/image'
-import jsLogo from "../public/logo-javascript.svg"
-import tsLogo from "../public/typescript-2.svg"
-import reactLogo from "../public/React-icon.svg.png"
-import nextsjsLogo from "../public/nextjs.png"
-import muiLogo from "../public/material-ui-1.svg"
-import tailwindLogo from "../public/tailwind-css-1.svg"
-import Slider from "react-slick";
+import jsLogo from "../public/home-img/logo-javascript.svg"
+import tsLogo from "../public/home-img/typescript-2.svg"
+import reactLogo from "../public/home-img/React-icon.svg.png"
+import nextsjsLogo from "../public/home-img/nextjs.png"
+import muiLogo from "../public/home-img/material-ui-1.svg"
+import tailwindLogo from "../public/home-img/tailwind-css-1.svg"
 
 
 export default function Carousel() {
