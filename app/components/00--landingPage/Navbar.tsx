@@ -43,7 +43,7 @@ export default memo( function Navbar() {
 
   return (
     <>
-      <nav className="navbar shadow-md h-[5rem font-medium flex justify-center space-x-3 py-4">
+      <nav className="navbar shadow-md h-[5rem] font-medium flex justify-center space-x-3 py-4 z-30">
           <Link href='/'>
         <div className={`flex items-baseline ${active === 'home' ? 'text-green-500' : ''}`}>
           <AiTwotoneHome className='text-2xl font-semibold mr-[-.5rem]'/>
