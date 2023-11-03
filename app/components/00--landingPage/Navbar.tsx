@@ -5,6 +5,12 @@ import { BsFillLayersFill } from "react-icons/bs";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { BsFillTrophyFill } from "react-icons/bs";
+import classnames from 'classnames'
+
+
+
 
 interface ThemesProps {
   corporate: string;
@@ -26,7 +32,16 @@ function getLocalStorage() {
 
 export default memo( function Navbar() {
   const [theme, setTheme] = useState(getLocalStorage());
-  const [active, setActive] = useState('')
+  
+  const currentPath = usePathname()
+
+  const links = [
+    {name: 'home', path: '/', icon: <AiTwotoneHome className='text-2xl font-semibold'/>},
+    {name: 'portfolio', path: '/portfolio', icon: <BsFillLayersFill className=" text-2xl font-semibold " />},
+    {name: 'achievements', path: '/achievements', icon: <BsFillTrophyFill className=" text-2xl font-semibold" />}
+  
+  ]
+
 
   const handleTheme = useCallback(function handleTheme() {
     const {corporate, dark} = themes
@@ -40,41 +55,25 @@ export default memo( function Navbar() {
   },[theme])
 
 
-
   return (
     <>
-      <nav className="navbar shadow-md h-[5rem] font-medium flex justify-center space-x-3 py-4 z-30">
-          <Link href='/'>
-        <div className={`flex items-baseline ${active === 'home' ? 'text-green-500' : ''}`}>
-          <AiTwotoneHome className='text-2xl font-semibold mr-[-.5rem]'/>
-          <button 
-          onClick={() => setActive('home')} 
-          className="mx-3 text-lg font-medium my-1"
+      <nav className="navbar shadow-md h-[5rem] font-medium flex justify-center items space-x-3 py-4 z-30">
+       <ul className="space-x-[1.5rem] capitalize">
+        {links.map(({name, path, icon}) => (
+          <Link 
+          href={path} 
+          key={name}
+          className={classnames({
+            'text-green-500': currentPath === path,
+            'transition-colors flex items-center space-x-2': true,
+            'hover:font-[500]': true,
+          })}
           >
-            Home
-          </button>
-        </div>
+            <span>{icon}</span>
+            <span className="text-lg">{name}</span>
           </Link>
-
-          <Link href={'/portfolio'}>
-        <div className={`flex items-baseline ${active === 'portfolio' ? 'text-green-500' : ''}`}>
-          <BsFillLayersFill className=" text-2xl font-semibold mr-[-.5rem]" />
-          <button 
-          className="mx-3 text-lg font-medium my-1"
-          onClick={() => setActive('portfolio')}
-          >
-            Projects
-          </button>
-        </div>
-          </Link>
-
-          <Link href={'/achievements'}>
-        <div className={`flex items-baseline ${active === 'achievements' ? 'text-green-500' : ''}`}>
-          <button onClick={() => setActive('achievements')} className="mx-3 text-lg font-medium my-1">
-            Achievements
-          </button>
-        </div>
-          </Link>
+        ))}
+       </ul>
 
         <div className="navbar-end">
           <label className="swap swap-indeterminate">
