@@ -7,7 +7,10 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BsFillTrophyFill } from "react-icons/bs";
-import classnames from 'classnames'
+import classnames from 'classnames';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import MobileDrawer from "./MobileDrawer";
+
 
 
 
@@ -32,7 +35,7 @@ function getLocalStorage() {
 
 export default memo( function Navbar() {
   const [theme, setTheme] = useState(getLocalStorage());
-  
+  const [open, setOpen] = useState(false);
   const currentPath = usePathname()
 
   const links = [
@@ -48,6 +51,11 @@ export default memo( function Navbar() {
     const newTheme = theme === corporate ? dark : corporate
     setTheme(newTheme)
   }, [theme])
+
+
+  const handleOpen = () => {
+    setOpen(!open)
+  }
   
   useEffect(function(){
     document.documentElement.setAttribute('data-theme', theme)
@@ -57,8 +65,14 @@ export default memo( function Navbar() {
 
   return (
     <>
-      <nav className="navbar shadow-md h-[5rem] font-medium flex justify-center items space-x-3 py-4 z-30">
-       <ul className="space-x-[1.5rem] capitalize">
+      <nav className="navbar shadow-md h-[5rem] font-medium flex sm:justify-center   sm:space-x-3 sm:py-4 z-30 w-auto px-[1.5erm] sm:px-0">
+
+         <MenuRoundedIcon 
+          className="text-zinc-800 font-semibold text-[2.5rem] sm:hidden  inline-block transition-transform"
+         onClick={handleOpen}
+         />
+
+       <ul className="space-x-[1.5rem] capitalize hidden  sm:flex sm:mr-auto ">
         {links.map(({name, path, icon}) => (
           <Link 
           href={path} 
@@ -73,10 +87,15 @@ export default memo( function Navbar() {
             <span className="text-lg">{name}</span>
           </Link>
         ))}
+
        </ul>
 
-        <div className="navbar-end">
-          <label className="swap swap-indeterminate">
+       {open && (
+        <MobileDrawer open={open} setOpen={handleOpen}/>
+       )}
+
+        <div className=" flex ml-auto sm:ml mr-[1.rem]">
+          <label className="swap swap-indeterminate ml-auto">
             <input type="checkbox" onChange={handleTheme} />
             <LightModeRoundedIcon className="swap-on text-green-400 text-3xl" />
             <DarkModeIcon className="swap-off text-green-400 text-3xl" />
@@ -89,3 +108,5 @@ export default memo( function Navbar() {
     </>
   );
 })
+
+

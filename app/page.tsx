@@ -6,12 +6,11 @@ import Carousel from "./Carousel";
 export default function Home() {
   
   return (
-    <>
-    <main className="py-[3rem] px-[3rem]">
+  
+    <main className="py-[3rem] px-[3rem] w-auto">
       <LandingPage />
+      <Carousel/>
     </main>
-    <Carousel/>
-    </>
   );
 }
 
