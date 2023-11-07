@@ -74,18 +74,16 @@ export default memo(function Navbar() {
 
   return (
     <nav className="navbar shadow-md h-[5rem] font-medium flex sm:justify-evenly   sm:space-x-3 sm:py-4 z-30 w-auto px-[1.5erm] sm:px-0">
+      <BiMenu
+        className={classnames({
+          "text-[2.7rem] sm:hidden": true,
+          "text-bg-zinc-800 font-semibold": theme === themes.corporate,
+          "text-bg-zinc-50 font-semibold": theme === themes.dark,
+          "@media screen and (max-width: 500px) display  ": true,
+        })}
+        onClick={handleOpen}
+      />
 
-        <BiMenu
-          // className="text-zinc-800 font-semibold text-[2.5rem] sm:hidden  inline-block transition-transform"
-          className={classnames({
-            "text-[2.7rem] sm:hidden": true,
-            "text-bg-zinc-800 font-semibold": theme === themes.corporate,
-            "text-bg-zinc-50 font-semibold": theme === themes.dark,
-            "@media screen and (max-width: 500px) display  ": true,
-          })}
-          onClick={handleOpen}
-        />
- 
       <ul className="space-x-[1.5rem] capitalize hidden  sm:flex mr-auto ">
         {links.map(({ name, path, icon }) => (
           <Link
