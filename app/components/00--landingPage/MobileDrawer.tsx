@@ -5,6 +5,7 @@ import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
 import { AiTwotoneHome } from "react-icons/ai";
 import { BsFillLayersFill, BsFillTrophyFill } from "react-icons/bs";
 import { usePathname } from "next/navigation";
+import CloseIcon from '@mui/icons-material/Close';
 import styles from "classnames";
 
 interface MobileDrawerProps {
@@ -55,7 +56,7 @@ export default function MobileDrawer({
       >
         <div className="flex items-center justify-end w-screen px-[1rem] py-[2rem] border-b-2 shadow-lg">
           <button onClick={() => setOpen(!open)}>
-            <ClearRoundedIcon className="text-[2.5rem] font-bold" />
+            <CloseIcon className="text-[3rem] font-[800]/"/>
           </button>
         </div>
 
