@@ -44,7 +44,7 @@ export default function MobileDrawer({
   }
 
   return (
-    <Drawer anchor="left" open={open} onClose={setOpen}>
+    <Drawer anchor="left" open={open} onClose={setOpen} variant="persistent">
       <section
         className={styles({
           "h-screen": true,

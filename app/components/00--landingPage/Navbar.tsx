@@ -79,7 +79,6 @@ export default memo(function Navbar() {
           "text-[2.7rem] sm:hidden": true,
           "text-bg-zinc-800 font-semibold": theme === themes.corporate,
           "text-bg-zinc-50 font-semibold": theme === themes.dark,
-          "@media screen and (max-width: 500px) display  ": true,
         })}
         onClick={handleOpen}
       />
