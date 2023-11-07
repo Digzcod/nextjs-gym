@@ -55,7 +55,7 @@ export default function MobileDrawer({
       >
         <div className="flex items-center justify-end w-screen px-[1rem] py-[2rem] border-b-2 shadow-lg">
           <button onClick={() => setOpen(!open)}>
-            <VscChromeClose className="text-[3rem] font-[900]/"/>
+            <VscChromeClose className="text-[2.5rem] font-[900]/"/>
           </button>
         </div>
 
