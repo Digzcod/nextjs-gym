@@ -8,10 +8,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BsFillTrophyFill } from "react-icons/bs";
 import classnames from "classnames";
-import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { BiMenu } from "react-icons/bi";
 import MobileDrawer from "./MobileDrawer";
-import { AiOutlineMenu } from "react-icons/ai";
 
 interface ThemesProps {
   corporate: string;
