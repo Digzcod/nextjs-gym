@@ -91,12 +91,12 @@ export default memo(function Navbar() {
             key={name}
             className={classnames({
               "text-green-500": currentPath === path,
-              "transition-colors flex items-center space-x-2": true,
+              "transition-colors flex items-center px-[1rem] space-x-2": true,
               "hover:font-[500]": true,
             })}
           >
             <span>{icon}</span>
-            <span className="text-lg">{name}</span>
+            <span className="text-[1.3rem]">{name}</span>
           </Link>
         ))}
       </ul>

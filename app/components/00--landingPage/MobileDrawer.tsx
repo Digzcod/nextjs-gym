@@ -1,6 +1,6 @@
 import React, { CSSProperties } from "react";
 import Link from "next/link";
-import { Button, Drawer } from "@mui/material";
+import { Button, Drawer, useMediaQuery } from "@mui/material";
 import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
 import { AiTwotoneHome } from "react-icons/ai";
 import { BsFillLayersFill, BsFillTrophyFill } from "react-icons/bs";
@@ -37,6 +37,11 @@ export default function MobileDrawer({
   theme,
 }: MobileDrawerProps) {
   const currentPath = usePathname();
+  const forBigScreen = useMediaQuery("(min-width: 640px)");
+
+  if (forBigScreen) {
+    return null;
+  }
 
   return (
     <Drawer anchor="left" open={open} onClose={setOpen}>
@@ -45,6 +50,7 @@ export default function MobileDrawer({
           "h-screen": true,
           "bg-slate-100 text-zinc-700": theme === "corporate",
           "bg-black text-gray-50": theme === "dracula",
+          "sm:hidden": true,
         })}
       >
         <div className="flex items-center justify-end w-screen px-[1rem] py-[2rem] border-b-2 shadow-lg">
@@ -77,7 +83,6 @@ export default function MobileDrawer({
             </Link>
           ))}
         </div>
-        
       </section>
     </Drawer>
   );
