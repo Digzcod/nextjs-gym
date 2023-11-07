@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect, useState, useCallback, memo } from "react";
 import { AiTwotoneHome } from "react-icons/ai";
 import { BsFillLayersFill } from "react-icons/bs";
@@ -7,13 +7,11 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BsFillTrophyFill } from "react-icons/bs";
-import classnames from 'classnames';
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import classnames from "classnames";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import { BiMenu } from "react-icons/bi";
 import MobileDrawer from "./MobileDrawer";
-
-
-
-
+import { AiOutlineMenu } from "react-icons/ai";
 
 interface ThemesProps {
   corporate: string;
@@ -21,92 +19,101 @@ interface ThemesProps {
 }
 
 const themes: ThemesProps = {
-  corporate: 'corporate',
-  dark: 'dracula'
-}
+  corporate: "corporate",
+  dark: "dracula",
+};
 
 function getLocalStorage() {
-  if(typeof window !== 'undefined') {
-    return localStorage.getItem('theme') || themes.corporate
+  if (typeof window !== "undefined") {
+    return localStorage.getItem("theme") || themes.corporate;
   }
-  return themes.corporate
+  return themes.corporate;
 }
 
-
-export default memo( function Navbar() {
+export default memo(function Navbar() {
   const [theme, setTheme] = useState(getLocalStorage());
   const [open, setOpen] = useState(false);
-  const currentPath = usePathname()
+  const currentPath = usePathname();
 
   const links = [
-    {name: 'home', path: '/', icon: <AiTwotoneHome className='text-2xl font-semibold'/>},
-    {name: 'portfolio', path: '/portfolio', icon: <BsFillLayersFill className=" text-2xl font-semibold " />},
-    {name: 'achievements', path: '/achievements', icon: <BsFillTrophyFill className=" text-2xl font-semibold" />}
-  
-  ]
+    {
+      name: "home",
+      path: "/",
+      icon: <AiTwotoneHome className="text-2xl font-semibold" />,
+    },
+    {
+      name: "portfolio",
+      path: "/portfolio",
+      icon: <BsFillLayersFill className=" text-2xl font-semibold " />,
+    },
+    {
+      name: "achievements",
+      path: "/achievements",
+      icon: <BsFillTrophyFill className=" text-2xl font-semibold" />,
+    },
+  ];
 
-
-  const handleTheme = useCallback(function handleTheme() {
-    const {corporate, dark} = themes
-    const newTheme = theme === corporate ? dark : corporate
-    setTheme(newTheme)
-  }, [theme])
-
+  const handleTheme = useCallback(
+    function handleTheme() {
+      const { corporate, dark } = themes;
+      const newTheme = theme === corporate ? dark : corporate;
+      setTheme(newTheme);
+    },
+    [theme]
+  );
 
   const handleOpen = () => {
-    setOpen(!open)
-  }
-  
-  useEffect(function(){
-    document.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem('theme', theme)
-  },[theme])
+    setOpen(!open);
+  };
 
+  useEffect(
+    function () {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+    },
+    [theme]
+  );
 
   return (
-    <>
-      <nav className="navbar shadow-md h-[5rem] font-medium flex sm:justify-center   sm:space-x-3 sm:py-4 z-30 w-auto px-[1.5erm] sm:px-0">
+    <nav className="navbar shadow-md h-[5rem] font-medium flex sm:justify-evenly   sm:space-x-3 sm:py-4 z-30 w-auto px-[1.5erm] sm:px-0">
 
-         <MenuRoundedIcon 
-          className="text-zinc-800 font-semibold text-[2.5rem] sm:hidden  inline-block transition-transform"
-         onClick={handleOpen}
-         />
-
-       <ul className="space-x-[1.5rem] capitalize hidden  sm:flex sm:mr-auto ">
-        {links.map(({name, path, icon}) => (
-          <Link 
-          href={path} 
-          key={name}
+        <BiMenu
+          // className="text-zinc-800 font-semibold text-[2.5rem] sm:hidden  inline-block transition-transform"
           className={classnames({
-            'text-green-500': currentPath === path,
-            'transition-colors flex items-center space-x-2': true,
-            'hover:font-[500]': true,
+            "text-[2.7rem] sm:hidden": true,
+            "text-bg-zinc-800 font-semibold": theme === themes.corporate,
+            "text-bg-zinc-50 font-semibold": theme === themes.dark,
+            "@media screen and (max-width: 500px) display  ": true,
           })}
+          onClick={handleOpen}
+        />
+ 
+      <ul className="space-x-[1.5rem] capitalize hidden  sm:flex mr-auto ">
+        {links.map(({ name, path, icon }) => (
+          <Link
+            href={path}
+            key={name}
+            className={classnames({
+              "text-green-500": currentPath === path,
+              "transition-colors flex items-center space-x-2": true,
+              "hover:font-[500]": true,
+            })}
           >
             <span>{icon}</span>
             <span className="text-lg">{name}</span>
           </Link>
         ))}
+      </ul>
 
-       </ul>
+      {open && <MobileDrawer open={open} setOpen={handleOpen} theme={theme} />}
 
-       {open && (
-        <MobileDrawer open={open} setOpen={handleOpen}/>
-       )}
-
-        <div className=" flex ml-auto sm:ml mr-[1.rem]">
-          <label className="swap swap-indeterminate ml-auto">
-            <input type="checkbox" onChange={handleTheme} />
-            <LightModeRoundedIcon className="swap-on text-green-400 text-3xl" />
-            <DarkModeIcon className="swap-off text-green-400 text-3xl" />
-          </label>
-         
-        </div>
-
-
-      </nav>
-    </>
+      <div className="ml-auto mr-[1.rem]">
+        <label className="swap swap-indeterminate ml-auto">
+          <input type="checkbox" onChange={handleTheme} />
+          <LightModeRoundedIcon className="swap-on text-green-400 text-3xl" />
+          <DarkModeIcon className="swap-off text-green-400 text-3xl" />
+        </label>
+      </div>
+    </nav>
   );
-})
-
-
+});
